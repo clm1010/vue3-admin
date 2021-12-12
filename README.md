@@ -1,16 +1,16 @@
 # vue3-admin
 
-## Project setup
+## 项目设置
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### 开发编译和热重载
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### 生产编译和打包
 ```
 npm run build
 ```
