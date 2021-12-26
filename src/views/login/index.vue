@@ -1,6 +1,11 @@
 <template>
   <div class="login-container">
-    <el-form class="login-form" :model="loginForm" :rules="loginRules">
+    <el-form
+      class="login-form"
+      ref="loginFromRef"
+      :model="loginForm"
+      :rules="loginRules"
+    >
       <div class="title-container">
         <h3 class="title">用户登录</h3>
       </div>
@@ -45,7 +50,11 @@
       </el-form-item>
 
       <!-- 登录按钮 -->
-      <el-button type="primary" style="width: 100%; margin-bottom: 30px"
+      <el-button
+        type="primary"
+        style="width: 100%; margin-bottom: 30px"
+        :loading="loading"
+        @click="handlerLogin"
         >登录</el-button
       >
     </el-form>
@@ -54,6 +63,7 @@
 
 <script setup>
 import { ref } from 'vue'
+import { useStore } from 'vuex'
 import { validatePassword } from './rules'
 // 数据源
 const loginForm = ref({
@@ -88,6 +98,30 @@ const onChangePwdType = () => {
   } else {
     passwordType.value = 'password'
   }
+}
+// 处理登录
+const loading = ref(false)
+const store = useStore()
+// ref(null)传入null 就会到当期去找有没有对应的ref实例
+const loginFromRef = ref(null)
+const handlerLogin = () => {
+  // 1. 进行表单校验
+  console.log(loginFromRef.value)
+  loginFromRef.value.validate((valid) => {
+    if (!valid) return
+    // 2. 触发登录动作
+    loading.value = true
+    store
+      .dispatch('user/login', loginForm.value)
+      .then(() => {
+        loading.value = false
+        // TODO: 3. 进行登录后处理
+      })
+      .catch((err) => {
+        console.error(err)
+        loading.value = false
+      })
+  })
 }
 </script>
 
