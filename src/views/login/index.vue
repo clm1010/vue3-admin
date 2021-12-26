@@ -106,7 +106,7 @@ const store = useStore()
 const loginFromRef = ref(null)
 const handlerLogin = () => {
   // 1. 进行表单校验
-  console.log(loginFromRef.value)
+  // console.log(loginFromRef.value)
   loginFromRef.value.validate((valid) => {
     if (!valid) return
     // 2. 触发登录动作
