@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <h1>占位</h1>
+    <h1 :style="{color: $store.getters.cssVar.menuText}">占位</h1>
     <el-scrollbar>
       <sidebar-menu></sidebar-menu>
     </el-scrollbar>
