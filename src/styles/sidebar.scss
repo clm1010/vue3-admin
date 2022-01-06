@@ -64,6 +64,9 @@
       border: none;
       height: 100%;
       width: 100% !important;
+      .el-menu-item , .el-sub-menu__title{
+        padding: 0;
+      }
     }
 
     .is-active > .el-submenu__title {

@@ -8,7 +8,8 @@ $menuHover: #263445;
 $subMenuBg: #1f2d3d;
 $subMenuHover: #001528;
 
-$sideBarWidth: 210px;
+$sideBarWidth: 210px; // 左侧菜单展开宽度
+$hideSideBarWidth: 54px; // 右侧菜单收起宽度
 
 // https://www.bluematador.com/blog/how-to-share-variables-between-js-and-sass
 // JS 与 scss 共享变量，在 scss 中通过 :export 进行导出，在 js 中可通过 ESM 进行导入
@@ -22,4 +23,5 @@ $sideBarWidth: 210px;
   subMenuBg: $subMenuBg;
   subMenuHover: $subMenuHover;
   sideBarWidth: $sideBarWidth;
+  hideSideBarWidth: $hideSideBarWidth;
 }
