@@ -1,3 +1,4 @@
+$logoColor: #ffffff;
 $menuText: #bfcbd9;
 $menuActiveText: #ffffff;
 $subMenuActiveText: #f4f4f5;
@@ -15,6 +16,7 @@ $hideSideBarWidth: 54px; // 右侧菜单收起宽度
 // JS 与 scss 共享变量，在 scss 中通过 :export 进行导出，在 js 中可通过 ESM 进行导入
 
 :export {
+  logoColor: $logoColor;
   menuText: $menuText;
   menuActiveText: $menuActiveText;
   subMenuActiveText: $subMenuActiveText;
