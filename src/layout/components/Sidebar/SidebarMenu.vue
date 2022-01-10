@@ -6,10 +6,11 @@
     :background-color="$store.getters.cssVar.menuBg"
     :text-color="$store.getters.cssVar.menuText"
     :active-text-color="$store.getters.cssVar.menuActiveText"
+    router
   >
     <sidebar-item
-      v-for="(item, index) in routes"
-      :key="index"
+      v-for="item in routes"
+      :key="item.path"
       :route="item"
     ></sidebar-item>
   </el-menu>

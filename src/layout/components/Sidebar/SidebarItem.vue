@@ -5,8 +5,8 @@
     </template>
     <!-- 循环渲染 -->
     <sidebar-item
-      v-for="(item, index) in route.children"
-      :key="index"
+      v-for="item in route.children"
+      :key="item.path"
       :route="item"
     ></sidebar-item>
   </el-sub-menu>
