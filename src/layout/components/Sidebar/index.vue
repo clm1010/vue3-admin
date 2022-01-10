@@ -3,7 +3,7 @@
     <!-- <h1 :style="{color: $store.getters.cssVar.menuText}">占位</h1> -->
     <div class="logo-container">
       <el-avatar
-        :size="44"
+        :size="logoHeight"
         :src="avatarUrl"
         :fit="`cover`"
         shape="square"
@@ -24,15 +24,16 @@ import logo from '@/assets/iron-man.svg'
 import imgFailed from '@/assets/img-failed.png'
 import SidebarMenu from './SidebarMenu'
 
-const failedUrl = imgFailed
+const failedUrl = imgFailed // 图片异常 占位
 const avatarUrl = logo
 const errorHandler = () => true
+const logoHeight = 44 // 全新 vue 能力 组件状态驱动动态CSS值
 </script>
 
 <style lang="scss" scoped>
 @import '~@/styles/variables.scss';
 .logo-container {
-  height: 44px;
+  height: v-bind(logoHeight) + 'px';
   padding: 10px 0 22px 0;
   display: flex;
   align-items: center;
