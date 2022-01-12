@@ -13,6 +13,7 @@ $sideBarWidth: 210px; // 左侧菜单展开宽度
 $hideSideBarWidth: 54px; // 右侧菜单收起宽度
 
 $sidebarDuration: 0.28s; // sidebar动画时间
+$breadcrumbDuration: 0.5s; // breadcrumb动画时间
 
 // 自定义颜色
 $color_666666: #666666;
@@ -33,4 +34,5 @@ $color_97a8be: #97a8be;
   sideBarWidth: $sideBarWidth;
   hideSideBarWidth: $hideSideBarWidth;
   sidebarDuration: $sidebarDuration;
+  breadcrumbDuration: $breadcrumbDuration;
 }

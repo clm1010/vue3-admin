@@ -1,0 +1,14 @@
+.breadcrumb-enter-active,
+.breadcrumb-leave-active {
+  transition: all #{$breadcrumbDuration};
+}
+
+.breadcrumb-enter-from,
+.breadcrumb-leave-from {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.breadcrumb-leave-active {
+  position: absolute;
+}

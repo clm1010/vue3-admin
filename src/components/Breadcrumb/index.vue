@@ -1,18 +1,20 @@
 <template>
   <el-breadcrumb class="breadcrumb" separator="/">
-    <el-breadcrumb-item
-      v-for="(item, index) in breadcrumbData"
-      :key="item.path"
-    >
-      <!-- 不可点击 -->
-      <span v-if="index === breadcrumbData.length - 1" class="no-redirect">
-        {{ item.meta.title }}
-      </span>
-      <!-- 可点击 -->
-      <span v-else class="redirect" @click="onLinkClick(item)">
-        {{ item.meta.title }}
-      </span>
-    </el-breadcrumb-item>
+    <transition-group name="breadcrumb">
+      <el-breadcrumb-item
+        v-for="(item, index) in breadcrumbData"
+        :key="item.path"
+      >
+        <!-- 不可点击 -->
+        <span v-if="index === breadcrumbData.length - 1" class="no-redirect">
+          {{ item.meta.title }}
+        </span>
+        <!-- 可点击 -->
+        <span v-else class="redirect" @click="onLinkClick(item)">
+          {{ item.meta.title }}
+        </span>
+      </el-breadcrumb-item>
+    </transition-group>
   </el-breadcrumb>
 </template>
 
@@ -67,7 +69,9 @@ const linkHoverColor = ref(store.getters.cssVar.menuBg)
     font-weight: 600;
     cursor: pointer;
     &:hover {
-      color: v-bind(linkHoverColor); // 将来需要进行主题替换，所以这里不去写死样式
+      color: v-bind(
+        linkHoverColor
+      ); // 将来需要进行主题替换，所以这里不去写死样式
     }
   }
 
