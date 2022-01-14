@@ -5,6 +5,7 @@
     <!-- 面包屑 -->
     <breadcrumb class="breadcrumb-container" />
     <div class="right-menu">
+      <language-select class="right-menu-item hover-effect"></language-select>
       <!-- 头像 -->
       <el-dropdown class="avatar-container" trigger="click">
         <div class="avatar-wrapper">
@@ -37,6 +38,7 @@
 import { useStore } from 'vuex'
 import Hamburger from '@/components/Hamburger'
 import Breadcrumb from '@/components/Breadcrumb'
+import LanguageSelect from '@/components/LanguageSelect'
 
 const store = useStore()
 const logout = () => {
@@ -74,7 +76,17 @@ const logout = () => {
     align-items: center;
     float: right;
     padding-right: 16px;
-    ::v-deep .avatar-container {
+    .right-menu-item {
+      display: inline-block;
+      padding: 0 18px 0 0;
+      font-size: 24px;
+      color: #5a5e66;
+      vertical-align: text-bottom;
+      &.hover-effect {
+        cursor: pointer;
+      }
+    }
+    .avatar-container {
       cursor: pointer;
       .avatar-wrapper {
         margin-top: 5px;
