@@ -1,13 +1,15 @@
 import { createI18n } from 'vue-i18n'
+import zhLocale from './lang/zh'
+import enLocale from './lang/en'
 const messages = {
   en: {
     msg: {
-      test: 'hello world'
+      ...enLocale
     }
   },
   zh: {
     msg: {
-      test: '你好'
+      ...zhLocale
     }
   }
 }
