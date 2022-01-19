@@ -7,11 +7,11 @@
       >
         <!-- 不可点击 -->
         <span v-if="index === breadcrumbData.length - 1" class="no-redirect">
-          {{ item.meta.title }}
+          {{ generateTitle(item.meta.title) }}
         </span>
         <!-- 可点击 -->
         <span v-else class="redirect" @click="onLinkClick(item)">
-          {{ item.meta.title }}
+          {{ generateTitle(item.meta.title) }}
         </span>
       </el-breadcrumb-item>
     </transition-group>
@@ -22,6 +22,7 @@
 import { ref, watch } from 'vue'
 import { useStore } from 'vuex'
 import { useRoute, useRouter } from 'vue-router'
+import { generateTitle } from '@/utils/i18n'
 
 // 生成数组数据
 const breadcrumbData = ref([])
@@ -30,7 +31,6 @@ const getBreadcrumbData = () => {
   breadcrumbData.value = route.matched.filter(
     (item) => item.meta && item.meta.title
   )
-  console.log(breadcrumbData)
 }
 
 // 监听 路由变化
