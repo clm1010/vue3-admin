@@ -12,7 +12,7 @@
       </el-tooltip>
     </div>
     <!-- menu -->
-    <template $dropdown>
+    <template #dropdown>
       <el-dropdown-menu>
         <el-dropdown-item command="color">
           {{ $t('msg.theme.themeColorChange') }}

@@ -78,7 +78,7 @@ const logout = () => {
     align-items: center;
     float: right;
     padding-right: 16px;
-    .right-menu-item {
+    ::v-deep .right-menu-item {
       display: inline-block;
       padding: 0 18px 0 0;
       font-size: 24px;
@@ -88,7 +88,7 @@ const logout = () => {
         cursor: pointer;
       }
     }
-    .avatar-container {
+    ::v-deep .avatar-container {
       cursor: pointer;
       .avatar-wrapper {
         margin-top: 5px;
