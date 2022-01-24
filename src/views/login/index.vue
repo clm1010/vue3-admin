@@ -216,7 +216,7 @@ $cursor: #fff;
     user-select: none;
   }
 
-  .language-select {
+  ::v-deep .language-select {
     position: absolute;
     top: 4px;
     right: 0;
