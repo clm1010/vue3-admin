@@ -5,7 +5,11 @@
     <!-- 面包屑 -->
     <breadcrumb class="breadcrumb-container" />
     <div class="right-menu">
+      <!-- 是否全屏 -->
+      <screen-full class="right-menu-item hover-effect"></screen-full>
+      <!-- 切换主题 -->
       <theme-select class="right-menu-item hover-effect"></theme-select>
+      <!-- 切换语言 -->
       <language-select class="right-menu-item hover-effect"></language-select>
       <!-- 头像 -->
       <el-dropdown class="avatar-container" trigger="click">
@@ -41,6 +45,7 @@ import Hamburger from '@/components/Hamburger'
 import Breadcrumb from '@/components/Breadcrumb'
 import LanguageSelect from '@/components/LanguageSelect'
 import ThemeSelect from '@/components/ThemeSelect'
+import ScreenFull from '@/components/ScreenFull'
 
 const store = useStore()
 const logout = () => {
@@ -93,9 +98,9 @@ const logout = () => {
       .avatar-wrapper {
         margin-top: 5px;
         position: relative;
-        .el-avatar {
-          // --el-avatar-background-color: none;
-        }
+        // .el-avatar {
+        //   --el-avatar-background-color: none;
+        // }
       }
     }
   }
