@@ -23,6 +23,7 @@
 
 <script setup>
 import { defineProps, defineEmits, ref } from 'vue'
+import { useStore } from 'vuex'
 defineProps({
   modelValue: {
     type: Boolean,
@@ -30,7 +31,7 @@ defineProps({
     required: true
   }
 })
-
+const store = useStore()
 const emits = defineEmits(['update:modelValue'])
 
 // 预定义色值
@@ -51,16 +52,23 @@ const predefineColors = [
   '#c7158577'
 ]
 
-// 默认色值
-const mColor = ref('#00ff00')
+/**
+ * 默认色值
+ */
+const mColor = ref(store.getters.mainColor)
 
-// 关闭
+/**
+ * 关闭按钮点击事件
+ */
 const closed = () => {
   emits('update:modelValue', false)
 }
 
-// 确认
+/**
+ * 确定按钮点击事件
+ */
 const confirm = () => {
+  store.commit('theme/setMainColor', mColor.value)
   closed()
 }
 </script>
