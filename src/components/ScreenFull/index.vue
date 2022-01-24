@@ -1,7 +1,7 @@
 <template>
   <div @click="onToggle">
     <svg-icon
-      :icon="isFullScreen ? 'exit-fullscreen' : 'fullscreen'"
+      :icon="isFullscreen ? 'exit-fullscreen' : 'fullscreen'"
     ></svg-icon>
   </div>
 </template>
@@ -11,7 +11,7 @@ import { ref, onMounted, onUnmounted } from 'vue'
 import screenfull from 'screenfull'
 
 // 是否全屏
-const isFullScreen = ref(false)
+const isFullscreen = ref(false)
 
 // 触发事件
 const onToggle = () => {
@@ -20,8 +20,7 @@ const onToggle = () => {
 
 // 监听 screenfull 的变化
 const change = () => {
-  isFullScreen.value = screenfull.isFullScreen
-  console.log(isFullScreen)
+  isFullscreen.value = screenfull.isFullscreen
 }
 // on: 绑定监听
 onMounted(() => {
