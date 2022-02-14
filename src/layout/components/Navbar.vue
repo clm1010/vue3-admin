@@ -5,6 +5,8 @@
     <!-- 面包屑 -->
     <breadcrumb class="breadcrumb-container" />
     <div class="right-menu">
+      <!-- 搜索 -->
+      <header-search class="right-menu-item hover-effect"></header-search>
       <!-- 是否全屏 -->
       <screen-full class="right-menu-item hover-effect"></screen-full>
       <!-- 切换主题 -->
@@ -46,6 +48,7 @@ import Breadcrumb from '@/components/Breadcrumb'
 import LanguageSelect from '@/components/LanguageSelect'
 import ThemeSelect from '@/components/ThemeSelect'
 import ScreenFull from '@/components/ScreenFull'
+import HeaderSearch from '@/components/HeaderSearch'
 
 const store = useStore()
 const logout = () => {

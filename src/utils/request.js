@@ -11,7 +11,7 @@ const service = axios.create({
 service.interceptors.request.use(
   (config) => {
     // 添加 icode
-    config.headers.icode = 'CB5B92F9AD0647BC' // 课程主页获取验证码 重要-icode获取
+    config.headers.icode = '183D01D24B5BB1EA' // 课程主页获取验证码 重要-icode获取
     // 在这里统一注入 token
     if (store.getters.token) {
       // 如果 isCheckTimeout 返回true 表示超时了

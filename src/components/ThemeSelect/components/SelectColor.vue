@@ -85,6 +85,7 @@ const confirm = async () => {
 
 <style lang="scss" scoped>
 .content {
+  text-align: center;
   .title {
     margin-bottom: 12px;
   }
