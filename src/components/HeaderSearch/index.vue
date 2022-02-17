@@ -17,17 +17,17 @@
       @change="onSelectChange"
     >
       <el-option
-        v-for="option in 5"
-        :key="option"
-        :label="option"
-        :value="option"
+        v-for="option in searchOptions"
+        :key="option.item.path"
+        :label="option.item.title.join(' > ')"
+        :value="option.item"
       ></el-option>
     </el-select>
   </div>
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import Fuse from 'fuse.js'
 import { filterRouters } from '@/utils/route'
@@ -67,17 +67,39 @@ const onShowClick = () => {
   isShow.value = !isShow.value
 }
 
+watch(isShow, val => {
+  if (val) {
+    headerSearchSelectRef.value.blur()
+    document.body.addEventListener('click', onClose)
+  } else {
+    document.body.removeEventListener('click', onClose)
+  }
+})
+
+// 关闭时间
+const headerSearchSelectRef = ref(null)
+const onClose = () => {
+  headerSearchSelectRef.value.blur()
+  isShow.value = false
+  searchOptions.value = []
+}
+
 // search 相关
 const search = ref('')
 
 // 搜索方法
+const searchOptions = ref([])
 const querySearch = (query) => {
-  console.log(fuse.search(query))
+  if (query !== '') {
+    searchOptions.value = fuse.search(query)
+  } else {
+    searchOptions.value = []
+  }
 }
 
 // 选中回调
-const onSelectChange = () => {
-  console.log('onSelectChange')
+const onSelectChange = (val) => {
+  router.push(val.path)
 }
 </script>
 
