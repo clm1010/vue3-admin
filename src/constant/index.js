@@ -15,3 +15,6 @@ export const MAIN_COLOR = 'mainColor'
 
 // 默认主题色
 export const DEFAULT_COLOR = '#409EFF'
+
+// tags
+export const TAGS_VIEW = '#409EFF'
