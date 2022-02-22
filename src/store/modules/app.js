@@ -5,7 +5,7 @@ export default {
   state: () => ({
     sidebarOpened: true,
     language: getItem(LANG) || 'zh',
-    tagsViewList: getItem(TAGS_VIEW)
+    tagsViewList: getItem(TAGS_VIEW) || []
   }),
   mutations: {
     triggerSidebarOpened(state) {
