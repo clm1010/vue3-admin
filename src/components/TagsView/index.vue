@@ -29,10 +29,12 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
+import { useStore } from 'vuex'
 import { useRoute } from 'vue-router'
 import ContextMenu from './ContextMenu'
 
+const store = useStore()
 const route = useRoute()
 
 /**
@@ -43,9 +45,14 @@ const isActive = (tag) => {
 }
 
 /**
- * 关闭
+ * 关闭 tag 的点击事件
  */
-const onCloseClick = () => {}
+const onCloseClick = (index) => {
+  store.commit('app/removeTagsView', {
+    type: 'index',
+    index
+  })
+}
 
 /**
  * 鼠标右键
@@ -63,6 +70,18 @@ const openMenu = (e, index) => {
   selectIndex.value = index
   visible.value = true
 }
+
+const closeMenu = () => {
+  visible.value = false
+}
+
+watch(visible, (val) => {
+  if (val) {
+    document.body.addEventListener('click', closeMenu)
+  } else {
+    document.body.removeEventListener('click', closeMenu)
+  }
+})
 </script>
 
 <style lang="scss" scoped>
