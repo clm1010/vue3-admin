@@ -9,12 +9,12 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@element-plus/icons-vue": "^0.2.4",
     "axios": "^0.24.0",
     "core-js": "^3.6.5",
     "css-color-function": "^1.3.3",
+    "driver.js": "^0.9.8",
     "echarts": "^5.2.2",
-    "element-plus": "^1.1.0-beta.24",
+    "element-plus": "^2.0.4",
     "fuse.js": "^6.5.3",
     "md5": "^2.3.0",
     "rgb-hex": "^4.0.0",
@@ -28,6 +28,7 @@
   "devDependencies": {
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-conventional": "^12.1.4",
+    "@element-plus/icons-vue": "^1.0.0",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-plugin-router": "~4.5.0",

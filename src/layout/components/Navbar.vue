@@ -3,8 +3,10 @@
     <!-- 汉堡 -->
     <hamburger class="hamburger-container" />
     <!-- 面包屑 -->
-    <breadcrumb class="breadcrumb-container" />
+    <breadcrumb id="guide-breadcrumb" class="breadcrumb-container" />
     <div class="right-menu">
+      <!-- 引导页 -->
+      <guide class="right-menu-item hover-effect" />
       <!-- 搜索 -->
       <header-search class="right-menu-item hover-effect"></header-search>
       <!-- 是否全屏 -->
@@ -49,6 +51,7 @@ import LanguageSelect from '@/components/LanguageSelect'
 import ThemeSelect from '@/components/ThemeSelect'
 import ScreenFull from '@/components/ScreenFull'
 import HeaderSearch from '@/components/HeaderSearch'
+import Guide from '@/components/Guide'
 
 const store = useStore()
 const logout = () => {
@@ -94,6 +97,10 @@ const logout = () => {
       vertical-align: text-bottom;
       &.hover-effect {
         cursor: pointer;
+        transition: background 0.3s;
+        &:hover {
+          background: rgba(0, 0, 0, 0.025);
+        }
       }
     }
     ::v-deep .avatar-container {
@@ -101,9 +108,10 @@ const logout = () => {
       .avatar-wrapper {
         margin-top: 5px;
         position: relative;
-        // .el-avatar {
-        //   --el-avatar-background-color: none;
-        // }
+        .el-avatar {
+          --el-avatar-background-color: none;
+          margin-right: 8px;
+        }
       }
     }
   }

@@ -8,7 +8,9 @@
     <!-- 图标 -->
     <div>
       <el-tooltip :content="$t('msg.navBar.themeChange')">
-        <svg-icon icon="change-theme"></svg-icon>
+        <span>
+          <svg-icon id="guide-theme" icon="change-theme"></svg-icon>
+        </span>
       </el-tooltip>
     </div>
     <!-- menu -->
@@ -33,7 +35,7 @@ import SelectColor from './components/SelectColor'
 // dialog
 const selectColorVisible = ref(false)
 
-const handleSetTheme = command => {
+const handleSetTheme = (command) => {
   selectColorVisible.value = true
 }
 </script>

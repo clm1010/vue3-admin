@@ -4,7 +4,15 @@
     class="header-search"
     @click.stop="onShowClick"
   >
-    <svg-icon class-name="search-icon" icon="search"></svg-icon>
+    <el-tooltip :content="$t('msg.navBar.headerSearch')">
+      <span>
+        <svg-icon
+          id="guide-search"
+          class-name="search-icon"
+          icon="search"
+        ></svg-icon>
+      </span>
+    </el-tooltip>
     <el-select
       ref="headerSearchSelectRef"
       class="header-search-select"

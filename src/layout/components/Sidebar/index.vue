@@ -46,10 +46,5 @@ const logoHeight = 44 // 全新 vue 能力 组件状态驱动动态CSS值
     font-size: 16px;
     white-space: nowrap;
   }
-  .el-avatar {
-    --el-avatar-background-color: none;
-    margin-right: 12px;
-    // border: 1px solid red;
-  }
 }
 </style>

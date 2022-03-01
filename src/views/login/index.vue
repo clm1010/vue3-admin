@@ -173,6 +173,7 @@ $cursor: #fff;
         color: $light_gray;
         height: 47px;
         caret-color: $cursor;
+        box-shadow: none;
       }
     }
   }

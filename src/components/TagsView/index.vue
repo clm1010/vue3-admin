@@ -13,11 +13,13 @@
       @contextmenu.prevent="openMenu($event, index)"
     >
       {{ tag.title }}
-      <i
-        v-show="!isActive(tag)"
-        class="el-icon-close"
-        @click.prevent.stop="onCloseClick(index)"
-      ></i>
+
+      <el-icon v-show="!isActive(tag)">
+        <close
+          class="el-icon-close"
+          @click.prevent.stop="onCloseClick(index)"
+        />
+      </el-icon>
     </router-link>
 
     <context-menu
@@ -125,8 +127,8 @@ watch(visible, (val) => {
     }
     // close 按钮
     .el-icon-close {
-      width: 16px;
-      height: 16px;
+      // width: 20px;
+      // height: 20px;
       line-height: 10px;
       vertical-align: 2px;
       border-radius: 50%;
