@@ -1,5 +1,6 @@
 <template>
   <div
+    id="guide-search"
     :class="{ show: isShow }"
     class="header-search"
     @click.stop="onShowClick"
@@ -7,7 +8,6 @@
     <el-tooltip :content="$t('msg.navBar.headerSearch')">
       <span>
         <svg-icon
-          id="guide-search"
           class-name="search-icon"
           icon="search"
         ></svg-icon>

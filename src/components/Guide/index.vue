@@ -5,12 +5,8 @@
       effect="dark"
       placement="bottom"
     >
-      <span>
-        <svg-icon
-          id="guide-start"
-          icon="guide"
-          @click.prevent.stop="onClick"
-        ></svg-icon>
+      <span id="guide-start" @click="onClick">
+        <svg-icon icon="guide"></svg-icon>
       </span>
     </el-tooltip>
   </div>
@@ -28,6 +24,8 @@ const i18n = useI18n()
 let driver = null
 onMounted(() => {
   driver = new Driver({
+    opacity: 0.1,
+    animate: false,
     // 禁止点击蒙版关闭
     allowClose: false,
     closeBtnText: i18n.t('msg.guide.close'),
@@ -39,7 +37,6 @@ onMounted(() => {
 const onClick = () => {
   driver.defineSteps(steps(i18n))
   driver.start()
-  console.log('123123')
 }
 </script>
 
