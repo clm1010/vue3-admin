@@ -1,28 +1,36 @@
 <template>
-  <div class="">
-    {{ $t('msg.test') }}
-    <el-pagination
-      v-model:currentPage="currentPage1"
-      :page-size="100"
-      layout="total, prev, pager, next"
-      :total="1000"
-      @size-change="handleSizeChange"
-      @current-change="handleCurrentChange"
-    >
-    </el-pagination>
+  <div class="my-container">
     <el-row>
-      <el-button>Default</el-button>
-      <el-button type="primary">Primary</el-button>
-      <el-button type="success">Success</el-button>
-      <el-button type="info">Info</el-button>
-      <el-button type="warning">Warning</el-button>
-      <el-button type="danger">Danger</el-button>
+      <el-col :span="6">
+        <project-card class="project-card">1</project-card>
+      </el-col>
+      <el-col :span="18">
+        <el-card>
+          <el-tabs v-model="activeName">
+            <el-tab-pane :label="$t('msg.profile.feature')" name="feature">
+              <feature />
+            </el-tab-pane>
+             <el-tab-pane :label="$t('msg.profile.chapter')" name="chapter">
+              <chapter />
+            </el-tab-pane>
+             <el-tab-pane :label="$t('msg.profile.author')" name="author">
+              <author />
+            </el-tab-pane>
+          </el-tabs>
+        </el-card>
+      </el-col>
     </el-row>
   </div>
 </template>
 
 <script setup>
-import {} from 'vue'
+import { ref } from 'vue'
+import ProjectCard from './components/ProjectCard'
+import feature from './components/Feature'
+import Chapter from './components/Chapter'
+import Author from './components/Author'
+
+const activeName = ref('featrue')
 </script>
 
 <style lang="scss" scoped></style>
