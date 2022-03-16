@@ -2,7 +2,7 @@
   <div class="my-container">
     <el-row>
       <el-col :span="6">
-        <project-card class="project-card" :featureData="featureData">
+        <project-card class="project-card" :features="featureData">
         </project-card>
       </el-col>
       <el-col :span="18">
@@ -31,6 +31,7 @@ import Feature from './components/Feature'
 import Chapter from './components/Chapter'
 import Author from './components/Author'
 import { feature } from '@/api/user'
+import { watchSwitchLang } from '@/utils/i18n'
 
 const activeName = ref('feature')
 
@@ -39,6 +40,13 @@ const getFeatureData = async () => {
   featureData.value = await feature()
 }
 getFeatureData()
+watchSwitchLang(getFeatureData)
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.my-container {
+  .user-card {
+    margin-right: 20px;
+  }
+}
+</style>

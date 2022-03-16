@@ -51,7 +51,8 @@ import {
   ElDropdown,
   ElDropdownMenu,
   ElDropdownItem,
-  ElColorPicker
+  ElColorPicker,
+  ElProgress
 } from 'element-plus'
 import { Close, Tools } from '@element-plus/icons-vue'
 import 'element-plus/dist/index.css'
@@ -111,6 +112,7 @@ const components = [
   ElDropdownMenu,
   ElDropdownItem,
   ElColorPicker,
+  ElProgress,
   // 以下是icon图标
   Tools,
   Close
