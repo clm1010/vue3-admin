@@ -23,4 +23,16 @@ defineProps({
 const activeName = ref(0)
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@import '~@/styles/variables.scss';
+::v-deep .el-collapse-item__header {
+  font-weight: bold;
+}
+
+.el-collapse-item {
+  ::v-deep a {
+    color: $color_2d62f7;
+    margin: 0 4px;
+  }
+}
+</style>

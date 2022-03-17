@@ -52,7 +52,10 @@ import {
   ElDropdownMenu,
   ElDropdownItem,
   ElColorPicker,
-  ElProgress
+  ElProgress,
+  ElTimeline,
+  ElTimelineItem,
+  ElTag
 } from 'element-plus'
 import { Close, Tools } from '@element-plus/icons-vue'
 import 'element-plus/dist/index.css'
@@ -113,6 +116,9 @@ const components = [
   ElDropdownItem,
   ElColorPicker,
   ElProgress,
+  ElTimeline,
+  ElTimelineItem,
+  ElTag,
   // 以下是icon图标
   Tools,
   Close
