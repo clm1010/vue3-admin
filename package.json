@@ -16,6 +16,7 @@
     "echarts": "^5.2.2",
     "element-plus": "^2.0.4",
     "fuse.js": "^6.5.3",
+    "lodash": "^4.17.21",
     "md5": "^2.3.0",
     "rgb-hex": "^4.0.0",
     "screenfull": "^5.1.0",
